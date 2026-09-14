@@ -1,6 +1,6 @@
 // List of data
 // get the total score of forces users only.
-var personnel = [
+const personnel = [
   {
     id: 5,
     name: "Luke Skywalker",
@@ -42,19 +42,19 @@ var personnel = [
 // REDUCE the data of scores of each force users 
 // calculate the total scores
 
-var forceUsers = personnel.filter(function(pilot) {
+const forceUsers = personnel.filter(function(pilot) {
     return pilot.isForceUser; 
 });
 
 // Shorter with arrow functions:
 // const forceUsers = personnel.filter(pilot => pilot.isForceUser);
 
-var totalForceUsersScore = forceUsers.reduce(function(acc, score) {
+let totalForceUsersScore = forceUsers.reduce(function(acc, score) {
     return acc + score.pilotingScore + score.shootingScore;
 }, 0);
 
 // Shorter with arrow functions:
-// var totalForceUsersScore = forceUsers.reduce((acc, score) => acc + score.pilotingScore + score.shootingScore, 0);
+// let totalForceUsersScore = forceUsers.reduce((acc, score) => acc + score.pilotingScore + score.shootingScore, 0);
 
 console.log(totalForceUsersScore); // total score is 420
 
